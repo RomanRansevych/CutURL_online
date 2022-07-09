@@ -26,7 +26,7 @@
         <br>
         <input class="form-input" type="password" id="password_two" name="password" placeholder="Repeat password">
         <br>
-        <button onclick="location.href='http://localhost:8080/cuturl/login'" type="button" class="form-button" id="sign-in-button">Log in</button>
+        <button onclick="location.href='https://cuturl2022.herokuapp.com/cuturl/login'" type="button" class="form-button" id="sign-in-button">Log in</button>
         <button onclick="sendJSON()" type="button" class="form-button" id="registration-button">Create account</button>
     </div>
 </form>
@@ -53,7 +53,7 @@
                     alert("This login is already in use");
                 } else {
                     let xhr = new XMLHttpRequest();
-                    let url = "http://localhost:8080/api/customer/create";
+                    let url = "https://cuturl2022.herokuapp.com/api/customer/create";
 
                     xhr.open("POST", url, true);
                     xhr.setRequestHeader("Content-Type", "application/json");
@@ -61,7 +61,7 @@
                     var data = JSON.stringify({"login": username.value, "password": passwordOne.value});
                     xhr.send(data);
 
-                    location.href='http://localhost:8080/cuturl/login';
+                    location.href='https://cuturl2022.herokuapp.com/cuturl/login';
                 }
             } else {
                 alert("Password doesn't match");

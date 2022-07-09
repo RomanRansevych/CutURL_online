@@ -54,7 +54,7 @@
         let yourLink = document.querySelector('#yourLink');
 
         let xhr = new XMLHttpRequest();
-        let url = "http://localhost:8080/api/link/create";
+        let url = "https://cuturl2022.herokuapp.com/api/link/create";
 
         xhr.open("POST", url, true);
         xhr.setRequestHeader("Content-Type", "application/json");
@@ -71,7 +71,7 @@
     function deleteLinkSendJSON(obj) {
         let id = obj.value;
         let xhr = new XMLHttpRequest();
-        let url = "http://localhost:8080/api/link/delete/" + id;
+        let url = "https://cuturl2022.herokuapp.com/api/link/delete/" + id;
 
         xhr.open("DELETE", url, true);
         xhr.send(url);

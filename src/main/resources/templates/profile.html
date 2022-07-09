@@ -46,12 +46,12 @@
         /*]]>*/
 
         let xhr = new XMLHttpRequest();
-        let url = "http://localhost:8080/api/customer/delete/" + customer;
+        let url = "https://cuturl2022.herokuapp.com/api/customer/delete/" + customer;
 
         xhr.open("DELETE", url, true);
         xhr.send(url);
 
-        location.href='http://localhost:8080/cuturl/login';
+        location.href='https://cuturl2022.herokuapp.com/cuturl/login';
     }
 </script>
 </body>

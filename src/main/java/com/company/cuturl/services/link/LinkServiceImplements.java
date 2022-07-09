@@ -42,16 +42,15 @@ public class LinkServiceImplements implements LinkService {
                     case 2: { randValues += number; break; }
                 }
             }
-
             for (Link existingLink : links) {
-                if (existingLink.getAfterLink().replace("http://localhost:8080/", "").equals(randValues)) {
+                if (existingLink.getAfterLink().replace("https://cuturl2022.herokuapp.com/", "").equals(randValues)) {
                     next = true;
                     break;
                 }
             }
         } while (next);
 
-        String cutLink = "http://localhost:8080/" + randValues;
+        String cutLink = "https://cuturl2022.herokuapp.com/" + randValues;
 
         link.setAfterLink(cutLink);
         linkRepository.save(link);

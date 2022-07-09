@@ -52,9 +52,8 @@ public class WebController extends ServiceController {
     @GetMapping("/{relocate}")
     public String relocate(@PathVariable String relocate) {
         List<Link> links = linkService.getAllLinks();
-
         for (Link link : links) {
-            if (link.getAfterLink().replace("http://localhost:8080/", "").equals(relocate)) {
+            if (link.getAfterLink().replace("https://cuturl2022.herokuapp.com/", "").equals(relocate)) {
                 return "redirect:" + link.getBeforeLink();
             }
         }
