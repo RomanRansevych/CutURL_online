@@ -56,7 +56,7 @@ public class LinkServiceImplements implements LinkService {
 
         if (link.getBeforeLink().replace("https://", "")
                 .equals(link.getBeforeLink())
-                ||
+                &&
                 link.getBeforeLink().replace("http://", "")
                 .equals(link.getBeforeLink())) {
             link.setBeforeLink("https://" + link.getBeforeLink());
