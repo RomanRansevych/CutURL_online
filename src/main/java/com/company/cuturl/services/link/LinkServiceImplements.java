@@ -43,7 +43,8 @@ public class LinkServiceImplements implements LinkService {
                 }
             }
             for (Link existingLink : links) {
-                if (existingLink.getAfterLink().replace("https://cuturl2022.herokuapp.com/", "").equals(randValues)) {
+                if (existingLink.getAfterLink().replace("https://cuturl2022.herokuapp.com/", "")
+                        .equals(randValues)) {
                     next = true;
                     break;
                 }
@@ -51,8 +52,16 @@ public class LinkServiceImplements implements LinkService {
         } while (next);
 
         String cutLink = "https://cuturl2022.herokuapp.com/" + randValues;
-
         link.setAfterLink(cutLink);
+
+        if (link.getBeforeLink().replace("https://", "")
+                .equals(link.getBeforeLink())
+                ||
+                link.getBeforeLink().replace("http://", "")
+                .equals(link.getBeforeLink())) {
+            link.setBeforeLink("https://" + link.getBeforeLink());
+        }
+
         linkRepository.save(link);
     }
 
