@@ -54,6 +54,7 @@ public class LinkServiceImplements implements LinkService {
         String cutLink = "https://cuturl2022.herokuapp.com/" + randValues;
         link.setAfterLink(cutLink);
 
+        link.setBeforeLink(link.getBeforeLink().trim());
         if (link.getBeforeLink().replace("https://", "")
                 .equals(link.getBeforeLink())
                 &&
